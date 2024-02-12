@@ -2,10 +2,13 @@ package com.joanes.demoparkapi.service;
 
 import com.joanes.demoparkapi.entity.Cliente;
 import com.joanes.demoparkapi.exception.CpfUniqueViolationException;
+import com.joanes.demoparkapi.exception.EntityNotFoundException;
 import com.joanes.demoparkapi.repository.ClienteRepository;
-import jakarta.persistence.EntityNotFoundException;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,5 +34,9 @@ public class ClienteService {
         return clienteRepository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Cliente id=%s não encontrado no sistema", id))
         );
+    }
+    @Transactional(readOnly = true)
+    public Page<Cliente> buscarTodos(Pageable pageable) {
+        return clienteRepository.findAll(pageable);
     }
 }
