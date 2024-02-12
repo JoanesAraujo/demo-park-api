@@ -1,0 +1,4 @@
+insert into USUARIOS (id, username, password, role) values (100, 'joanescaraujo@gmail.com', '$2a$12$bLGCikJFKvpIjPOoffaYse3ri4bWv1h.8s2MLwRkNJgHFdRRQytfe', 'ROLE_ADMIN');
+insert into USUARIOS (id, username, password, role) values (101, 'bia@gmail.com', '$2a$12$bLGCikJFKvpIjPOoffaYse3ri4bWv1h.8s2MLwRkNJgHFdRRQytfe', 'ROLE_CLIENTE');
+insert into USUARIOS (id, username, password, role) values (102, 'edjane@gmail.com', '$2a$12$bLGCikJFKvpIjPOoffaYse3ri4bWv1h.8s2MLwRkNJgHFdRRQytfe', 'ROLE_CLIENTE');
+insert into USUARIOS (id, username, password, role) values (103, 'toby@gmail.com', '$2a$12$bLGCikJFKvpIjPOoffaYse3ri4bWv1h.8s2MLwRkNJgHFdRRQytfe', 'ROLE_CLIENTE');
