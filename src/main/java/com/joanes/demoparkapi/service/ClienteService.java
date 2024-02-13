@@ -5,6 +5,7 @@ import com.joanes.demoparkapi.exception.CpfUniqueViolationException;
 import com.joanes.demoparkapi.exception.EntityNotFoundException;
 import com.joanes.demoparkapi.repository.ClienteRepository;
 
+import com.joanes.demoparkapi.repository.projection.ClienteProjection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -36,7 +37,11 @@ public class ClienteService {
         );
     }
     @Transactional(readOnly = true)
-    public Page<Cliente> buscarTodos(Pageable pageable) {
-        return clienteRepository.findAll(pageable);
+    public Page<ClienteProjection> buscarTodos(Pageable pageable) {
+        return clienteRepository.findAllPageable(pageable);
+    }
+    @Transactional(readOnly = true)
+    public Cliente buscarPorUsuarioId(Long id) {
+        return clienteRepository.findByUsuarioId(id);
     }
 }
