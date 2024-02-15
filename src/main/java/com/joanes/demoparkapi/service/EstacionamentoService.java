@@ -34,6 +34,4 @@ public class EstacionamentoService {
         return clienteVagaService.salvar(clienteVaga);
     }
 
-
-
 }

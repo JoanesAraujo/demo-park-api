@@ -1,10 +1,7 @@
 package com.joanes.demoparkapi.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -14,6 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
+
 
 @Getter
 @Setter
@@ -27,7 +25,7 @@ public class ClienteVaga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "numero_recibo", nullable = false, unique = true, length = 15)
+    @Column(name = "numero_recibo", nullable = false, unique = true, length = 20)
     private String recibo;
     @Column(name = "placa", nullable = false, length = 8)
     private String placa;
